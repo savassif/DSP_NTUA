@@ -9,7 +9,7 @@ figure;
 for i=4:4:16
     N = i;
     fplot (@(theta) abs(B(theta, N , 0.08, pi/2, 2000)),[0 pi]);
-    xlabel('è(rad)');
+    xlabel('Ã¨(rad)');
     ylabel ('Magnitude (dB)');
     hold on;
     set(gca,'YScale','log');
@@ -24,7 +24,7 @@ figure;
 for i = 8 : 4 : 20
     d = i/100;
     fplot (@(theta) abs(B(theta, 8 , d, pi/2, 2000)),[0 pi]);
-    xlabel('è (rad)');
+    xlabel('Ã¨ (rad)');
     ylabel ('Magnitude (dB)');
     hold on;
     set(gca,'YScale','log');
@@ -47,7 +47,7 @@ for theta = 0 : 15 : 60
         j=j+1;
     end
 end
-legend('è = 0^ï' ,'è = 45^0' ,'è = 60^ï'); 
+legend('Ã¨ = 0^Ã¯' ,'Ã¨ = 45^0' ,'Ã¨ = 60^Ã¯'); 
 hold off; 
 suptitle('Delay-and-Sum Beam Pattern');
 
@@ -57,9 +57,9 @@ for theta_s = 0 : 15 : 90
     if (theta_s ==45) || (theta_s == 0) || (theta_s == 90) 
         figure;
         semilogr_polar((-pi:0.001:pi) , abs( B((-pi:0.001:pi) , 8 , 0.08 , deg2rad(theta_s), 2000))) ;
-        legend(['ès =',num2str(theta_s),' ^o']);
+        legend(['Ã¨s =',num2str(theta_s),' ^o']);
         title('Delay-and-Sum Beam Pattern');
-        xlabel('è (^o)');
+        xlabel('Ã¨ (^o)');
         ylabel('Magnitude (dB)');
     end
 end
@@ -399,7 +399,7 @@ end
 z_finalb=z_finalb(1:length(source_b));
 audiowrite('real_mmse.wav',z_finalb,48000);
 
-%% 2.2.Â.2
+%% 2.2.Ã‚.2
 t=(0:length(source_b)-1)*(1/fs);
 %Plot of clean signal
 figure;
